@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Aymeric Bringard
+  description: Install and configure InfluxDB.
+  company: "Aymeric Bringard, Conseil & Developpements"
+  license: license (MIT)
+  min_ansible_version: 1.9
+  platforms:
+  - name: Raspbian
+    versions:
+    - jessie
+
+  galaxy_tags:
+    - database
+    - influxdb
+
+dependencies: []

@@ -1,0 +1,10 @@
+---
+# file: tasks/install.yml
+
+- name: "InfluxDB > Install package"
+  apt:
+    apt:
+    name: "{{ influxdb_install_packages|default(influxdb_install_packages_default, True) }}"
+    install_recommends: false
+    update_cache:       true
+    cache_valid_time:   3600

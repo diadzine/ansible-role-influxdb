@@ -1,0 +1,9 @@
+---
+# file: tasks/config.yml
+
+- name: "InfluxDB > Config template"
+  template:
+    src:  "{{ influxdb_config_template }}"
+    dest: "{{ influxdb_config_file }}"
+  notify:
+    - influxdb restart

@@ -1,0 +1,32 @@
+---
+# tasks file for ansible-role-influxdb
+
+- import_tasks: install.yml
+  tags:
+    - influxdb
+    - influxdb.install
+
+- import_tasks: config.yml
+  tags:
+    - influxdb
+    - influxdb.config
+
+- import_tasks: services.yml
+  tags:
+    - influxdb
+    - influxdb.services
+
+- import_tasks: databases.yml
+  tags:
+    - influxdb
+    - influxdb.databases
+
+- import_tasks: users.yml
+  tags:
+    - influxdb
+    - influxdb.users
+
+- import_tasks: privileges.yml
+  tags:
+    - influxdb
+    - influxdb.privileges
