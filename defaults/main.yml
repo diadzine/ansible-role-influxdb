@@ -2,6 +2,8 @@
 # file: defaults/main.yml
 
 # Install
+influxdb_apt_key: "https://repos.influxdata.com/influxdb.key"
+influxdb_apt_url: "deb https://repos.influxdata.com/debian"
 influxdb_install_packages: ~
 influxdb_install_packages_default:
   - influxdb
