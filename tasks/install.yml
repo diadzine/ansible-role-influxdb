@@ -1,6 +1,22 @@
 ---
 # file: tasks/install.yml
 
+- name: "InfluxDB > Install apt-transport-https to support https APT downloads"
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: "InfluxDB > Add InfluxDB repository key"
+  apt_key:
+    url: '{{ influxdb_apt_key }}'
+    state: present
+  when: influxdb_apt_key | string
+
+- name: "InfluxDB > Add InfluxDB repository"
+  apt_repository:
+    repo: '{{ influxdb_apt_url }} {{ ansible_distribution_release }} main'
+    state: present
+
 - name: "InfluxDB > Install package"
   apt:
     name: "{{ influxdb_install_packages|default(influxdb_install_packages_default, True) }}"
