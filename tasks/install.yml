@@ -23,3 +23,8 @@
     install_recommends: false
     update_cache:       true
     cache_valid_time:   3600
+
+- name: "InfluxDB > Ensure InfluxDB is started"
+  service:
+    name:  influxdb
+    state: started
